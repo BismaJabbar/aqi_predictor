@@ -22,7 +22,7 @@ import hopsworks
 # ─────────────────────────────────────────────
 AQICN_TOKEN    = os.getenv("AQICN_TOKEN", "YOUR_AQICN_TOKEN_HERE")
 HOPSWORKS_KEY  = os.getenv("HOPSWORKS_API_KEY", "YOUR_HOPSWORKS_KEY_HERE")
-HOPSWORKS_PROJECT = os.getenv("HOPSWORKS_PROJECT", "aqi_predictor")
+HOPSWORKS_PROJECT = os.getenv("HOPSWORKS_PROJECT", "aqi_predictorrr")
 CITY           = "karachi"   # change to your city if needed
 
 
