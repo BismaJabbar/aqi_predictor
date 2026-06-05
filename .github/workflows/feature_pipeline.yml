@@ -1,0 +1,30 @@
+name: Feature Pipeline (Hourly)
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # runs every hour
+  workflow_dispatch:        # allows manual trigger from GitHub UI
+
+jobs:
+  run-feature-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install hopsworks==4.7.* "hopsworks[python]" requests pandas numpy
+
+      - name: Run Feature Pipeline
+        env:
+          AQICN_TOKEN: ${{ secrets.AQICN_TOKEN }}
+          HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
+        run: |
+          python feature_pipeline.py
