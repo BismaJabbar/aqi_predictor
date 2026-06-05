@@ -28,7 +28,7 @@ import hopsworks
 # CONFIG
 # ─────────────────────────────────────────────
 HOPSWORKS_KEY     = os.getenv("HOPSWORKS_API_KEY", "YOUR_HOPSWORKS_KEY_HERE")
-HOPSWORKS_PROJECT = "aqi_predictor"
+HOPSWORKS_PROJECT = "aqi_predictorrr"
 
 FEATURE_COLS = [
     "pm25", "pm10", "o3", "no2", "so2", "co",
