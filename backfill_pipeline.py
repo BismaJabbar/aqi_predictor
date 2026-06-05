@@ -22,7 +22,7 @@ import hopsworks
 # ─────────────────────────────────────────────
 AQICN_TOKEN       = os.getenv("AQICN_TOKEN", "YOUR_AQICN_TOKEN_HERE")
 HOPSWORKS_KEY     = os.getenv("HOPSWORKS_API_KEY", "YOUR_HOPSWORKS_KEY_HERE")
-HOPSWORKS_PROJECT = "aqi_predictor"
+HOPSWORKS_PROJECT = "aqi_predictorrr"
 CITY              = "karachi"
 
 # How many days back to backfill (more = better model)
