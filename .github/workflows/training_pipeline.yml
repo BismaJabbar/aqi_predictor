@@ -1,0 +1,30 @@
+name: Training Pipeline (Daily)
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # runs every day at 2am UTC
+  workflow_dispatch:        # allows manual trigger from GitHub UI
+
+jobs:
+  run-training-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install hopsworks==4.7.* "hopsworks[python]" requests pandas numpy scikit-learn joblib matplotlib
+
+      - name: Run Training Pipeline
+        env:
+          AQICN_TOKEN: ${{ secrets.AQICN_TOKEN }}
+          HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
+        run: |
+          python training_pipeline.py
