@@ -27,4 +27,5 @@ jobs:
           AQICN_TOKEN: ${{ secrets.AQICN_TOKEN }}
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
         run: |
+          ls -la
           python feature_pipeline.py
