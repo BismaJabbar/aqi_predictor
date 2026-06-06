@@ -1,1 +1,8 @@
-python-3.11
+streamlit==1.35.0
+requests
+pandas
+numpy
+joblib
+scikit-learn
+hopsworks==4.7.*
+protobuf==3.20.3
