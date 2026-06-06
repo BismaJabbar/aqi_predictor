@@ -213,7 +213,7 @@ def run_training():
         "rmse": round(best["rmse"], 4),
         "mae":  round(best["mae"],  4),
         "r2":   round(best["r2"],   4),
-        "model_name": best["name"]
+       
     }
     save_model_to_registry(best, project, metrics)
 
