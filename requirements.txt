@@ -5,3 +5,4 @@ numpy>=2.0.0
 joblib
 scikit-learn
 hopsworks[python]==5.0.*
+matplotlib
